@@ -22,21 +22,21 @@
 ![Screenshot](screenshots/sqlite.gif)
 
 ### Requisitos
-[X] - Admin e usuário comum
-[X] - Criação e exclusão de usuários comuns
-[X] - Criação, Leitura, Atualização e Exclusão de Recursos
-[X] - API Python - Django
-[X] - Documentação da API - Swagger
-[X] - Banco relacional - SQLite
-[X] - Dockerfile
-[ ] - Alocar recursos por um tempo determinado (não finalizado)
+- [x] Admin e usuário comum
+- [x] Criação e exclusão de usuários comuns
+- [x] Criação, Leitura, Atualização e Exclusão de Recursos
+- [x] API Python - Django
+- [x] Documentação da API - Swagger
+- [x] Banco relacional - SQLite
+- [x] Dockerfile
+- [x] Alocar recursos por um tempo determinado (não finalizado)
 
 ### Extras (não requisitados)
-[X] - Bootstrap
-[X] - Paginação
-[X] - Busca por nome
-[X] - Pipenv e requirements
-[X] - Variáveis de sessão
-[ ] - Middleware de autenticação - login (não finalizado)
+- [x] Bootstrap
+- [x] Paginação
+- [x] Busca por nome
+- [x] Pipenv e requirements
+- [x] Variáveis de sessão
+- [x] Middleware de autenticação - login (não finalizado)
 
 Teste enviado com antecedência devido à complicações de saúde. Realizarei exames que comprometerá meu último dia de teste. Agradeço a compreensão!
