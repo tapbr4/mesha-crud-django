@@ -29,7 +29,7 @@
 - [x] Documentação da API - Swagger
 - [x] Banco relacional - SQLite
 - [x] Dockerfile
-- [x] Alocar recursos por um tempo determinado (não finalizado)
+- [ ] Alocar recursos por um tempo determinado (não finalizado)
 
 ### Extras (não requisitados)
 - [x] Bootstrap
@@ -37,6 +37,6 @@
 - [x] Busca por nome
 - [x] Pipenv e requirements
 - [x] Variáveis de sessão
-- [x] Middleware de autenticação - login (não finalizado)
+- [ ] Middleware de autenticação - login (não finalizado)
 
 Teste enviado com antecedência devido à complicações de saúde. Realizarei exames que comprometerá meu último dia de teste. Agradeço a compreensão!
