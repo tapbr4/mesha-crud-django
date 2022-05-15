@@ -39,4 +39,4 @@
 - [x] Variáveis de sessão
 - [ ] Middleware de autenticação - login (não finalizado)
 
-Teste enviado com antecedência devido à complicações de saúde. Realizarei exames que comprometerá meu último dia de teste. Agradeço a compreensão!
+Teste enviado com antecedência devido à complicações de saúde. Realizarei exames que comprometerão meu último dia de teste. Agradeço a compreensão!
