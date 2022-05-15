@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Recursos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>CRUD - Recursos</h1>
+    </div>
+    
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        {% if request.session.admin %}
+        <a href="/recursos/form" class="btn btn-success">Adicionar Recurso</a>
+        <a href="/login/register" class="btn btn-warning">Cadastrar Usuário</a>
+        <a href="/login/userlist" class="btn btn-dark">Listar Usuários</a>
+        {% endif %}
+        <a href="/" class="btn btn-outline-secondary">Logout</a>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+      <form method="get">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Pesquisar...">
+      </form>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Qtd</th>
+                <th scope="col">Data</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for recurso in db %}
+              <tr>
+                <th scope="row">{{recurso.id}}</th>
+                <td>{{recurso.nome}}</td>
+                <td>{{recurso.qtd}}</td>
+                <td>{{recurso.data|date:"d/m/Y"}}</td>
+                <td>
+                  <a href="/recursos/view/{{recurso.id}}" class="btn btn-dark">Visualizar</a>
+                  {% if request.session.admin %}
+                  <a href="/recursos/edit/{{recurso.id}}" class="btn btn-primary">Editar</a>
+                  <a href="/recursos/delete/{{recurso.id}}" class="btn btn-danger btnDel">Deletar</a>
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          
+          <div id="pagination">
+            {% if db.has_previous %}
+              <a href="?page={{db.previous_page_number}}"> << </a>
+            {% endif %}
+      
+            <strong>{{db.number}}</strong>
+      
+            {% if db.has_next %}
+              <a href="?page={{db.next_page_number}}"> >> </a>
+            {% endif %}
+          </div>
+    </div>
+
+    
+
+    {% load static %}
+    <script src="{% static 'javascript.js' %}"></script>
+
+</body>
+
+</html>

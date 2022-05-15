@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Lista de Usuários</h1>
+    </div>
+    
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+      <a href="/recursos" class="btn btn-success">Voltar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Username</th>
+                <th scope="col">Senha</th>
+                <th scope="col">Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for usuario in db %}
+              <tr>
+                <th scope="row">{{usuario.id}}</th>
+                <td>{{usuario.login}}</td>
+                <td>{{usuario.senha}}</td>
+                <td>
+                  {%if usuario.id != 1%}
+                  <a href="/login/delete/{{usuario.id}}" class="btn btn-danger btnDel">Deletar</a>
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <div id="pagination">
+            {% if db.has_previous %}
+              <a href="?page={{db.previous_page_number}}"> << </a>
+            {% endif %}
+      
+            <strong>{{db.number}}</strong>
+      
+            {% if db.has_next %}
+              <a href="?page={{db.next_page_number}}"> >> </a>
+            {% endif %}
+          </div>
+    </div>
+</body>
+
+</html>

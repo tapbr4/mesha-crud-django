@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar - Recurso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Visualizar - Recurso</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/recursos" class="btn btn-success">Voltar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+      <strong>Nome: </strong>{{db.nome}}<br>
+      <strong>Quantidade: </strong>{{db.qtd}}<br>
+      <strong>Data: </strong>{{db.data|date:"d/m/Y"}}<br><br>
+      {{db.nome}} foi adicionado na data {{db.data|date:"d/m/Y"}} e possui {{db.qtd}} unidades em estoque.
+    </div>
+
+</body>
+
+</html>
